@@ -45,7 +45,9 @@ class NetCat:
                         break
                 if response:
                     print(response)
-                    buffer = input('>>>')
+                    buffer = ''
+                    while buffer == '':                    
+                        buffer = input('>>>')
                     buffer += '\n'
                     self.socket.send(buffer.encode(encoding='gb2312', errors='ignore'))
         except KeyboardInterrupt:
